@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package error;
+
+enum SearchError {
+  //初始值, 无意义
+  INIT = 0;
+  SEARCH_FAILED = 10001;
+}

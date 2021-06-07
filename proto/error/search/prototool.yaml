@@ -1,0 +1,14 @@
+protoc:
+  version: 3.6.1
+lint:
+  group: google
+generate:
+  plugins:
+    - name: go
+      flags: plugins=grpc
+      output: ../../../pb/error
+
+    - name: doc
+      path: protoc-gen-doc
+      flags: markdown,readme.md
+      output: ../../../pb_doc/error

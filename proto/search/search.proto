@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package search;
+
+option go_package = "server/pb/search;search";
+
+import "common.proto";
+
+service SearchService {
+  rpc Search(stream SearchRequest) returns (stream SearchResponse);
+}
+
+message SearchRequest {
+  common.CommonHeader header = 1;
+  string request = 2;
+}
+
+message SearchResponse {
+  common.BusinessStatus status = 1;
+  string response = 2;
+}
