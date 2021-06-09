@@ -2,12 +2,12 @@ package v1
 
 import (
 	"fmt"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model/request"
-	"gin-vue-admin/model/response"
-	"gin-vue-admin/pb/common"
-	"gin-vue-admin/pb/search"
-	"gin-vue-admin/utils"
+	"go-gateway/global"
+	"go-gateway/model/request"
+	"go-gateway/model/response"
+	"go-gateway/pb/common"
+	"go-gateway/pb/search"
+	"go-gateway/utils"
 	"github.com/gin-gonic/gin"
 )
 

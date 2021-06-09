@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"gin-vue-admin/global"
+	"go-gateway/global"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )

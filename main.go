@@ -1,9 +1,9 @@
 package main
 
 import (
-	"gin-vue-admin/core"
-	"gin-vue-admin/global"
-	"gin-vue-admin/initialize"
+	"go-gateway/core"
+	"go-gateway/global"
+	"go-gateway/initialize"
 )
 
 

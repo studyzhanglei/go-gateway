@@ -1,4 +1,4 @@
-module gin-vue-admin
+module go-gateway
 
 go 1.14
 

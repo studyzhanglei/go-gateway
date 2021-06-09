@@ -11,7 +11,7 @@ import (
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	math "math"
-	common "gin-vue-admin/pb/common"
+	common "go-gateway/pb/common"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

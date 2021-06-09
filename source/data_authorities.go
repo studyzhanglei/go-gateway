@@ -1,7 +1,7 @@
 package source
 
 import (
-	"gin-vue-admin/global"
+	"go-gateway/global"
 
 	"github.com/gookit/color"
 	"gorm.io/gorm"

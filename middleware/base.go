@@ -3,9 +3,9 @@ package middleware
 import (
 	"bytes"
 	"fmt"
-	"gin-vue-admin/global"
-	"gin-vue-admin/model/response"
-	"gin-vue-admin/utils"
+	"go-gateway/global"
+	"go-gateway/model/response"
+	"go-gateway/utils"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"io/ioutil"

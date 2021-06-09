@@ -1,13 +1,13 @@
 package global
 
 import (
-	"gin-vue-admin/config"
+	"go-gateway/config"
 	"github.com/go-redis/redis"
 	redigo "github.com/gomodule/redigo/redis"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
-	grpcpool "gin-vue-admin/utils/grpc"
+	grpcpool "go-gateway/utils/grpc"
 )
 
 

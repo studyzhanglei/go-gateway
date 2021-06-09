@@ -2,9 +2,9 @@ package core
 
 import (
 	"fmt"
-	"gin-vue-admin/global"
+	"go-gateway/global"
 	"google.golang.org/grpc"
-	grpcpool "gin-vue-admin/utils/grpc"
+	grpcpool "go-gateway/utils/grpc"
 )
 
 

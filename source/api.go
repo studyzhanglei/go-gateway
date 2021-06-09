@@ -1,8 +1,8 @@
 package source
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/model"
+	"go-gateway/global"
+	"go-gateway/model"
 	"github.com/gookit/color"
 	"time"
 

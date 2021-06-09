@@ -1,7 +1,7 @@
 package response
 
 import (
-	"gin-vue-admin/model"
+	"go-gateway/model"
 )
 
 type SysUserResponse struct {

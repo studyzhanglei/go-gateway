@@ -1,8 +1,8 @@
 package initialize
 
 import (
-	"gin-vue-admin/global"
-	"gin-vue-admin/initialize/internal"
+	"go-gateway/global"
+	"go-gateway/initialize/internal"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
