@@ -18,7 +18,7 @@ import (
 //@return: error
 
 func Email(subject string, body string) error {
-	to := strings.Split(global.GVA_CONFIG.Email.To, ",")
+	to := strings.Split(global.CONFIG.Email.To, ",")
 	return send(to, subject, body)
 }
 
@@ -29,7 +29,7 @@ func Email(subject string, body string) error {
 //@return: error
 
 func ErrorToEmail(subject string, body string) error {
-	to := strings.Split(global.GVA_CONFIG.Email.To, ",")
+	to := strings.Split(global.CONFIG.Email.To, ",")
 	if to[len(to)-1] == "" { // 判断切片的最后一个元素是否为空,为空则移除
 		to = to[:len(to)-1]
 	}
@@ -43,7 +43,7 @@ func ErrorToEmail(subject string, body string) error {
 //@return: error
 
 func EmailTest(subject string, body string) error {
-	to := []string{global.GVA_CONFIG.Email.From}
+	to := []string{global.CONFIG.Email.From}
 	return send(to, subject, body)
 }
 
@@ -54,12 +54,12 @@ func EmailTest(subject string, body string) error {
 //@return: error
 
 func send(to []string, subject string, body string) error {
-	from := global.GVA_CONFIG.Email.From
-	nickname := global.GVA_CONFIG.Email.Nickname
-	secret := global.GVA_CONFIG.Email.Secret
-	host := global.GVA_CONFIG.Email.Host
-	port := global.GVA_CONFIG.Email.Port
-	isSSL := global.GVA_CONFIG.Email.IsSSL
+	from := global.CONFIG.Email.From
+	nickname := global.CONFIG.Email.Nickname
+	secret := global.CONFIG.Email.Secret
+	host := global.CONFIG.Email.Host
+	port := global.CONFIG.Email.Port
+	isSSL := global.CONFIG.Email.IsSSL
 
 	auth := smtp.PlainAuth("", from, secret, host)
 	e := email.NewEmail()

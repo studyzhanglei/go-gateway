@@ -12,7 +12,7 @@ func GetGrpcClient2(port string) (conn *grpc.ClientConn ) {
 	var err error
 	conn, err = grpc.Dial(":" + port, grpc.WithInsecure())
 	if err != nil {
-		global.GVA_LOG.Error(fmt.Sprintf("grpc.Dial err: %s", err.Error()))
+		global.LOG.Error(fmt.Sprintf("grpc.Dial err: %s", err.Error()))
 	}
 
 	return conn

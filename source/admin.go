@@ -22,7 +22,7 @@ var admins = []model.SysUser{
 //@author: [SliverHorn](https://github.com/SliverHorn)
 //@description: sys_users 表数据初始化
 func (a *admin) Init() error {
-	return global.GVA_DB.Transaction(func(tx *gorm.DB) error {
+	return global.DB.Transaction(func(tx *gorm.DB) error {
 		if tx.Where("id IN ?", []int{1, 2}).Find(&[]model.SysUser{}).RowsAffected == 2 {
 			color.Danger.Println("\n[Mysql] --> sys_users 表的初始数据已存在!")
 			return nil

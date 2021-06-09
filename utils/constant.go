@@ -1,7 +1,7 @@
 package utils
 
 const (
-	ConfigEnv  = "GVA_CONFIG"
+	ConfigEnv  = "CONFIG"
 	ConfigFile = "config.yaml"
 	REQUET_LOG_KEY  = "REQUEST_LOG"
 )

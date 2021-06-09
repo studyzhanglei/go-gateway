@@ -12,6 +12,6 @@ func GetTraceLog(ctx *gin.Context) *zap.Logger {
 		return l.(*zap.Logger)
 	}
 
-	return global.GVA_LOG
+	return global.LOG
 }
 

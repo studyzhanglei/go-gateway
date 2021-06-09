@@ -20,7 +20,7 @@ var files = []model.ExaFileUploadAndDownload{
 //@author: [SliverHorn](https://github.com/SliverHorn)
 //@description: exa_file_upload_and_downloads 表初始化数据
 func (f *file) Init() error {
-	return global.GVA_DB.Transaction(func(tx *gorm.DB) error {
+	return global.DB.Transaction(func(tx *gorm.DB) error {
 		if tx.Where("id IN ?", []int{1, 2}).Find(&[]model.ExaFileUploadAndDownload{}).RowsAffected == 2 {
 			color.Danger.Println("\n[Mysql] --> exa_file_upload_and_downloads 表初始数据已存在!")
 			return nil

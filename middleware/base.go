@@ -29,7 +29,7 @@ func Base() gin.HandlerFunc {
 		//新增request-id
 		requestId := string(c.Request.Header.Get("x-request-id"))
 		c.Set("trace-id", requestId)
-		c.Set(utils.REQUET_LOG_KEY, global.GVA_LOG.With(zap.String("trace-id", requestId)))
+		c.Set(utils.REQUET_LOG_KEY, global.LOG.With(zap.String("trace-id", requestId)))
 
 		//记录请求日志
 		data, _ := ioutil.ReadAll(c.Request.Body)
