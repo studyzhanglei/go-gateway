@@ -12,7 +12,6 @@ import (
 )
 
 
-
 func Grpc2(c *gin.Context) {
 	var G  request.Grpc
 	_ = c.ShouldBindJSON(&G)

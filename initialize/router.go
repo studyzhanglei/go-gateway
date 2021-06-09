@@ -1,7 +1,6 @@
 package initialize
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"go-gateway/global"
 	"go-gateway/middleware"
@@ -20,7 +19,6 @@ func Routers() *gin.Engine {
 		router.InitGrpcRouter(PublicGroup) // GRPC test
 	}
 
-	fmt.Println(1111111)
 
 	global.LOG.Info("router register success")
 	return Router

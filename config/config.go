@@ -11,4 +11,5 @@ type Server struct {
 	Mysql Mysql `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
 	// oss
 	Local      Local      `mapstructure:"local" json:"local" yaml:"local"`
+	Grpc GRPC `mapstructure:"grpc" json:"grpc" yaml:"grpc"`
 }

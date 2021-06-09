@@ -1,3 +1,5 @@
+// +build !windows
+
 package utils
 
 import (
@@ -17,6 +19,7 @@ import (
 func GetWriteSyncer() (zapcore.WriteSyncer, error) {
 	fileWriter, err := zaprotatelogs.New(
 		path.Join(global.CONFIG.Zap.Director, "%Y-%m-%d.log"),
+		zaprotatelogs.WithLinkName(global.CONFIG.Zap.LinkName),
 		zaprotatelogs.WithMaxAge(7*24*time.Hour),
 		zaprotatelogs.WithRotationTime(24*time.Hour),
 	)

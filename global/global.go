@@ -2,7 +2,7 @@ package global
 
 import (
 	"go-gateway/config"
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 	redigo "github.com/gomodule/redigo/redis"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
