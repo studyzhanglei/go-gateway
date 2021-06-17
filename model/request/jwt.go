@@ -15,3 +15,16 @@ type CustomClaims struct {
 	BufferTime  int64
 	jwt.StandardClaims
 }
+
+
+type MyClaims struct {
+	CreateTime uint `json:"iat"`
+	Host string `json:"aud"`
+	Jti jti `json:"jti"`
+	jwt.StandardClaims
+}
+
+type jti struct {
+	Uid uint `json:"id"`
+	Type string `json:"type"`
+}

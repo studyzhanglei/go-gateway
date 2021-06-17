@@ -1,17 +1,35 @@
 package router
 
 import (
-	"go-gateway/api/v1"
-	"go-gateway/middleware"
 	"github.com/gin-gonic/gin"
+	"go-gateway/api/v1"
 )
 
 
-func InitGrpcRouter(Router *gin.RouterGroup) (R gin.IRoutes) {
-	BaseRouter := Router.Group("").Use(middleware.NeedInit())
+func InitCommonRouter(Router *gin.RouterGroup) (R gin.IRoutes) {
+	BaseRouter := Router.Group("")
 	{
-		BaseRouter.Any("grpc2", v1.Grpc2)
-		BaseRouter.Any("grpc3", v1.Grpc3)
+		BaseRouter.GET("/", v1.Index)
 	}
 	return BaseRouter
 }
+
+func InitGrpcRouter(Router *gin.RouterGroup) (R gin.IRoutes) {
+	BaseRouter := Router.Group("")
+	{
+		BaseRouter.GET("grpc2", v1.Grpc2)
+		BaseRouter.GET("grpc3", v1.Grpc3)
+	}
+	return BaseRouter
+}
+
+
+
+func InitLoginRouter(Router *gin.RouterGroup) (R gin.IRoutes) {
+	BaseRouter := Router.Group("").Use()
+	{
+		BaseRouter.POST("login", v1.Login)
+	}
+	return BaseRouter
+}
+

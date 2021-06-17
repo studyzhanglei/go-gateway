@@ -5,7 +5,6 @@ import (
 	"go-gateway/global"
 	"go-gateway/model/request"
 	"go-gateway/model/response"
-	"go-gateway/pb/common"
 	"go-gateway/pb/search"
 	"go-gateway/utils"
 	"github.com/gin-gonic/gin"
@@ -32,9 +31,7 @@ func Grpc2(c *gin.Context) {
 	utils.GetTraceLog(c).Info(G.Username)
 
 	stream.Send(&search.SearchRequest{
-		Header: &common.CommonHeader{
-			TraceId: c.Value("trace-id").(string),
-		},
+		Header: utils.GetGrpcHeader(c),
 		Request: G.Username,
 	})
 
@@ -64,4 +61,21 @@ func Grpc2(c *gin.Context) {
 func Grpc3(c *gin.Context) {
 	var G request.Grpc
 	_ = c.ShouldBindJSON(&G)
+}
+
+
+func Login(c *gin.Context) {
+	if claims, exists := c.Get("claims"); exists {
+		fmt.Println(claims.(*request.MyClaims))
+	}
+
+	utils.GetTraceLog(c)
+}
+
+func Index(c *gin.Context) {
+	if claims, exists := c.Get("claims"); exists {
+		fmt.Println(claims.(*request.MyClaims))
+	}
+
+	response.OkWithMessage("hello", c)
 }

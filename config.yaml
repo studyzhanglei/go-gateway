@@ -4,7 +4,6 @@ zap:
   #  format: 'console'
   #  format: 'console' # `json` or `console`
   format: 'json'
-  #  prefix: '[GIN-VUE-ADMIN]'
   director: 'log'
   link-name: 'latest_log'
   show-line: true
@@ -42,3 +41,9 @@ mysql:
 # grpc configuration
 grpc:
   port: "1234"
+
+jwt:
+  signing-key: 'Bk7B5$F687DE88?67BFBC7@E863D#9*B'
+  expires-time: 604800
+  buffer-time: 86400
+
