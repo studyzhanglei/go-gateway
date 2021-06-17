@@ -23,6 +23,7 @@ require (
 	github.com/go-redis/redis/v8 v8.9.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang/protobuf v1.4.2
+	github.com/studyzhanglei/grpc-proto  v0.0.3
 	github.com/gomodule/redigo v1.8.4
 	github.com/gookit/color v1.3.1
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect

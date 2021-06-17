@@ -1,11 +1,14 @@
 package utils
 
 import (
-	"go-gateway/global"
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/studyzhanglei/grpc-proto/pb/common"
+	"go-gateway/global"
 	"go-gateway/model/request"
-	"go-gateway/pb/common"
+	"go-gateway/model/response"
 	"go.uber.org/zap"
+	"go-gateway/utils/errors"
 )
 
 func GetTraceLog(ctx *gin.Context) *zap.Logger {
@@ -30,4 +33,23 @@ func GetGrpcHeader(ctx *gin.Context) *common.CommonHeader {
 	}
 
 	return header
+}
+
+func ErrorHandle(ctx *gin.Context) {
+	if err := recover();err != nil {
+		fmt.Println("进入错误捕获处理")
+		e, ok := err.(*errors.Error)
+		if ok { //是自定义error
+			response.Result(int(e.GetCode()), map[string]interface{}{}, e.Error(), ctx)
+			return
+		}
+
+		if global.CONFIG.System.Env != "prod" {
+			response.Result(response.ERROR, map[string]interface{}{}, fmt.Sprintf("%s", err), ctx)
+			return
+		}
+
+		response.Result(response.ERROR, map[string]interface{}{}, "System error.", ctx)
+		return
+	}
 }

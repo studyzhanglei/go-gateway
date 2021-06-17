@@ -10,6 +10,7 @@ func InitCommonRouter(Router *gin.RouterGroup) (R gin.IRoutes) {
 	BaseRouter := Router.Group("")
 	{
 		BaseRouter.GET("/", v1.Index)
+		BaseRouter.GET("userInfo", v1.UserInfo)
 	}
 	return BaseRouter
 }

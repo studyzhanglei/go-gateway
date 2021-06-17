@@ -22,6 +22,7 @@ type Login struct {
 // grpc structure
 type Grpc struct {
 	Username  string `json:"username"`
+	Uid int `json:"uid"`
 }
 
 // Modify password structure
